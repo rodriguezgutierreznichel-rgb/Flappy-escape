@@ -123,11 +123,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 62
-        width: 9
-        height: 9
+        y: 0
+        width: 98
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: got-hit-2_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 97
-        height: 83
+        width: 98
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,11 +167,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 43
-        width: 9
-        height: 9
+        y: 0
+        width: 98
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: be419a60f959efd478b1abce939080b6
     internalID: 0
     vertices: []
     indices: 
@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      got-hit-2_0: 8857362814272430968
+      got-hit-2_1: 8367838668530597329
+      got-hit-2_2: -2979530566084622986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
 
     private PlayerControllers controllersPlayer;
 
+    private Animator PlayerAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         controllersPlayer = new PlayerControllers();
-       
+        PlayerAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -33,9 +35,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        bool estaSaltando = controllersPlayer.Controllers.JUMP.IsPressed();
+        // Cambia IsPressed por wasPressedThisFrame (si usas el nuevo Input System)
+        // O mejor aún, usa el callback de "Started"
+        bool estaSaltando = controllersPlayer.Controllers.JUMP.WasPressedThisFrame();
 
-        if (estaSaltando == true)
+        if (estaSaltando)
         {
             Flap();
         }
@@ -45,12 +49,12 @@ public class PlayerController : MonoBehaviour
     {
         rigb2d.linearVelocity = Vector2.zero;
         rigb2d.AddForce(Vector2.up * upForce);
-        
+        PlayerAnimator.SetTrigger("FLAP");
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         isDead = true;
-        
+        PlayerAnimator.SetTrigger("DEAD");
     }
 }
