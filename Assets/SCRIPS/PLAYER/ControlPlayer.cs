@@ -4,6 +4,8 @@ using UnityEngine.InputSystem.XR;
 
 public class ControlPlayer : MonoBehaviour
 {
+    public float timer = 0;
+
     public float velocity = 2.0f;
     public Rigidbody2D rigb2d;
     public float forwardVelocity = 2.0f; // Velocidad hacia adelante
@@ -32,6 +34,7 @@ public class ControlPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer = timer  + Time.deltaTime;
        
         if (!chocandoConObstaculo && forwardVelocity < maxForwardVelocity)
         {

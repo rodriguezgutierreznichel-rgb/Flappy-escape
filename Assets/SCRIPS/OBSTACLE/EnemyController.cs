@@ -7,6 +7,12 @@ public class EnemyController : MonoBehaviour
     public float acceleration = 0.2f; // Cuánto aumenta la velocidad por segundo
     public float maxSpeed = 15.0f;    // El tope de velocidad
 
+    public Animator EnemyAnimator;
+
+    public void Start()
+    {
+        EnemyAnimator = GetComponent<Animator>();
+    }
     void Update()
     {
         
@@ -17,5 +23,6 @@ public class EnemyController : MonoBehaviour
 
         
         transform.Translate(Vector3.right * speed * Time.deltaTime);
+        
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocity;
+    public float upForce;
     public Rigidbody2D rigb2d;
-    private Animator animatorPlayer;
+    
     public bool isDead;
 
     private PlayerControllers controllersPlayer;
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         controllersPlayer = new PlayerControllers();
-        animatorPlayer = GetComponent<Animator>();
+       
     }
 
     private void OnEnable()
@@ -44,13 +44,13 @@ public class PlayerController : MonoBehaviour
     public void Flap()
     {
         rigb2d.linearVelocity = Vector2.zero;
-        rigb2d.AddForce(Vector2.up * velocity);
-        animatorPlayer.SetTrigger("FLAP");
+        rigb2d.AddForce(Vector2.up * upForce);
+        
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         isDead = true;
-        animatorPlayer.SetTrigger("DEATH");
+        
     }
 }
